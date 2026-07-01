@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Siswa SMK | Profesional & Kreatif</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-300 antialiased">
+
+    <!-- Header / Navigasi -->
+    <nav class="fixed top-0 left-0 w-full z-40 glass border-b border-slate-200/50 dark:border-slate-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="p-2 bg-primary-500 text-white rounded-xl shadow-lg shadow-primary-500/30">
+                        <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                    </span>
+                    <span class="font-extrabold text-xl tracking-tight bg-gradient-to-r from-primary-600 to-indigo-600 dark:from-primary-500 dark:to-indigo-400 bg-clip-text text-transparent">
+                        SMK Portofolio
+                    </span>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#beranda" class="hover:text-primary-500 font-medium transition-colors">Beranda</a>
+                    <a href="#tentang" class="hover:text-primary-500 font-medium transition-colors">Tentang</a>
+                    <a href="#keahlian" class="hover:text-primary-500 font-medium transition-colors">Keahlian</a>
+                    <a href="#proyek" class="hover:text-primary-500 font-medium transition-colors">Proyek</a>
+                    <a href="#pengalaman" class="hover:text-primary-500 font-medium transition-colors">Pengalaman</a>
+                    <a href="#kontak" class="hover:text-primary-500 font-medium transition-colors">Kontak</a>
+                </div>
+
+                <!-- Kontrol & Dark Mode -->
+                <div class="flex items-center gap-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors" aria-label="Toggle Theme">
+                        <i id="themeIcon" data-lucide="moon" class="w-5 h-5 text-slate-600 dark:text-slate-300"></i>
+                    </button>
+                    <!-- Tombol Mobile Menu -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                        <i data-lucide="menu" class="w-5 h-5 text-slate-600 dark:text-slate-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Tersembunyi secara default) -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200/50 dark:border-slate-800/50 bg-white dark:bg-slate-900 px-4 py-4 space-y-3 shadow-lg">
+            <a href="#beranda" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Beranda</a>
+            <a href="#tentang" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Tentang</a>
+            <a href="#keahlian" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Keahlian</a>
+            <a href="#proyek" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Proyek</a>
+            <a href="#pengalaman" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Pengalaman</a>
+            <a href="#kontak" class="block py-2 px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section / Beranda -->
+    <section id="beranda" class="pt-32 pb-20 md:py-40 flex items-center justify-center relative overflow-hidden">
+        <!-- Dekorasi Background -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Badge Jurusan -->
+            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 mb-6 border border-primary-200/50 dark:border-primary-800/50 animate-pulse">
+                <span class="w-2 h-2 rounded-full bg-primary-500"></span>
+                Siswa SMK Jurusan Rekayasa Perangkat Lunak (RPL)
+            </span>
+            
+            <!-- Headline Utama -->
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
+                Membangun Solusi Digital untuk<br class="hidden sm:inline">
+                <span class="bg-gradient-to-r from-primary-500 to-indigo-500 bg-clip-text text-transparent">
+                    Masa Depan Industri
+                </span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-10 leading-relaxed">
+                Halo, saya <span class="font-semibold text-slate-800 dark:text-slate-100">Tegar Hardinatha</span>. Berfokus pada pengembangan aplikasi web, perancangan antarmuka (UI/UX), serta antusias terhadap teknologi terbaru.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#proyek" class="w-full sm:w-auto px-8 py-3.5 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-xl shadow-lg shadow-primary-500/30 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <span>Lihat Proyek</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#kontak" class="w-full sm:w-auto px-8 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-semibold rounded-xl shadow-md border border-slate-200 dark:border-slate-700 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span>Hubungi Saya</span>
+                </a>
+            </div>
+
+            <!-- Sosmed Mini -->
+            <div class="mt-12 flex justify-center items-center gap-6 text-slate-500 dark:text-slate-400">
+                <a href="https://github.com" target="_blank" class="hover:text-primary-500 transition-colors" aria-label="GitHub">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-primary-500 transition-colors" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="hover:text-primary-500 transition-colors" aria-label="Instagram">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Saya -->
+    <section id="tentang" class="py-20 bg-white dark:bg-slate-800/40 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Ilustrasi / Foto -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 dark:shadow-none">
+                        <!-- Background aksen -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary-500 to-indigo-500 opacity-20"></div>
+                        <!-- Placeholder Foto Profil Profesional dengan SVG/CSS yang rapi -->
+                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800 p-8 text-center">
+                            <img src="Tegar.jpg" alt="Tegar Hardinatha" class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-4 shadow-xl border-4 border-white dark:border-slate-700">
+                            
+                            <h4 class="font-bold text-lg sm:text-xl text-slate-800 dark:text-slate-100">Tegar Hardinatha</h4>
+                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">Siswa Smk Negeri 4 Bandar Lampung</p>
+                            <span class="mt-4 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-semibold rounded-full flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Siap Magang / Kerja
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teks Deskripsi -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="space-y-2">
+                        <h2 class="text-3xl font-bold tracking-tight">Tentang Diri Saya</h2>
+                        <div class="w-16 h-1 bg-primary-500 rounded"></div>
+                    </div>
+
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Halo! Saya Tegar Hardinatha, seorang siswa jurusan Pengembangan Perangkat Lunak dan Gim (PPLG) di SMK Negeri 4 Bandar Lampung. Saya memiliki minat yang besar di bidang teknologi, khususnya dalam pengembangan website, pemrograman, dan pembuatan aplikasi. Selama menempuh pendidikan, saya telah mempelajari berbagai bahasa pemrograman dan teknologi web, serta terus mengembangkan kemampuan melalui berbagai proyek dan latihan mandiri.
+                    </p>
+                    
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                        Saya memiliki pengalaman dalam dunia coding, mulai dari membangun website sederhana hingga mengembangkan aplikasi berbasis web. Saya senang mempelajari teknologi baru, memecahkan masalah melalui pemrograman, dan menciptakan solusi digital yang bermanfaat. Bagi saya, setiap proyek merupakan kesempatan untuk terus belajar, meningkatkan kemampuan, dan menghasilkan karya yang lebih baik.
+                    </p>
+
+                    <!-- Info Cepat Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-sm sm:text-base">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-lg">
+                                <i data-lucide="book-open" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Pendidikan</p>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">SMK Negeri (RPL)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-lg">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Lokasi</p>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">Bandar Lampung, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-lg">
+                                <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Status Magang</p>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">Tersedia untuk Prakerin/Kerja</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-lg">
+                                <i data-lucide="languages" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Bahasa Pemrograman Terfavorit</p>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">JavaScript, PHP, SQL</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian / Skills -->
+    <section id="keahlian" class="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight">Keahlian & Tools</h2>
+                <p class="text-slate-500 dark:text-slate-400">Teknologi dan peralatan yang sering saya gunakan untuk mewujudkan ide kreatif menjadi kenyataan digital.</p>
+                <div class="w-16 h-1 bg-primary-500 rounded mx-auto"></div>
+            </div>
+
+            <!-- Grid Keahlian -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Frontend Dev -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700/50">
+                    <div class="p-3 bg-blue-500/10 text-blue-500 rounded-xl w-fit mb-6">
+                        <i data-lucide="layout" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Frontend Development</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>HTML5 / CSS3</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-500 h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>Tailwind CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>JavaScript (ES6+)</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-500 h-full rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Dev -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700/50">
+                    <div class="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl w-fit mb-6">
+                        <i data-lucide="database" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Backend & Database</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>PHP (Laravel Dasar)</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>MySQL / SQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>Node.js / Express</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Others -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700/50">
+                    <div class="p-3 bg-indigo-500/10 text-indigo-500 rounded-xl w-fit mb-6">
+                        <i data-lucide="terminal" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Desain & Alat Kerja</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>Git & GitHub</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>UI/UX Design (Figma)</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1 text-sm font-medium">
+                                <span>Linux OS Dasar</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                                <div class="bg-indigo-500 h-full rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyek / Portfolio Kerja -->
+    <section id="proyek" class="py-20 bg-white dark:bg-slate-800/20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight">Karya & Proyek Terpilih</h2>
+                <p class="text-slate-500 dark:text-slate-400">Beberapa proyek nyata yang telah saya kerjakan secara mandiri maupun tim sekolah.</p>
+                <div class="w-16 h-1 bg-primary-500 rounded mx-auto"></div>
+            </div>
+
+            <!-- Tombol Filter Kategori -->
+            <div class="flex justify-center flex-wrap gap-2 sm:gap-4 mb-12">
+                <button onclick="filterProjects('all')" class="project-filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-primary-500 text-white shadow-md transition-all">
+                    Semua
+                </button>
+                <button onclick="filterProjects('web')" class="project-filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                    Web App
+                </button>
+                <button onclick="filterProjects('design')" class="project-filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                    UI/UX Design
+                </button>
+                <button onclick="filterProjects('others')" class="project-filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                    Lainnya
+                </button>
+            </div>
+
+            <!-- Grid Proyek -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsGrid">
+                
+                <!-- Proyek 1: Web App Kasir -->
+                <div class="project-card-el group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="web">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-500 flex items-center justify-center text-white relative">
+                        <i data-lucide="shopping-cart" class="w-16 h-16 opacity-30 absolute group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-bold text-lg relative z-10">Sistem Kasir Kantin</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs font-bold text-primary-500 uppercase tracking-wider">Web App</span>
+                        <h3 class="text-xl font-bold group-hover:text-primary-500 transition-colors">Aplikasi Kasir Sekolah</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">Sistem manajemen penjualan kantin berbasis web menggunakan PHP Native dan MySQL dengan rekap harian otomatis.</p>
+                        <button onclick="openModal('kasir')" class="w-full text-center py-2 bg-slate-100 dark:bg-slate-700 hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+                            Detail Selengkapnya
+                            <i data-lucide="eye" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Proyek 2: UI/UX redesign -->
+                <div class="project-card-el group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="design">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white relative">
+                        <i data-lucide="palette" class="w-16 h-16 opacity-30 absolute group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-bold text-lg relative z-10">Redesign Web Sekolah</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs font-bold text-purple-500 uppercase tracking-wider">UI/UX Design</span>
+                        <h3 class="text-xl font-bold group-hover:text-purple-500 transition-colors">Redesign Website Sekolah</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">Mendesain antarmuka baru untuk website SMK agar lebih modern, interaktif, dan mudah diakses oleh calon siswa baru.</p>
+                        <button onclick="openModal('web-sekolah')" class="w-full text-center py-2 bg-slate-100 dark:bg-slate-700 hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+                            Detail Selengkapnya
+                            <i data-lucide="eye" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Proyek 3: Others / IoT/Networking -->
+                <div class="project-card-el group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-lg border border-slate-100 dark:border-slate-700/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl" data-category="others">
+                    <div class="h-48 bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center text-white relative">
+                        <i data-lucide="cpu" class="w-16 h-16 opacity-30 absolute group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-bold text-lg relative z-10">Smart Door Arduino</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <span class="text-xs font-bold text-emerald-500 uppercase tracking-wider">Lainnya</span>
+                        <h3 class="text-xl font-bold group-hover:text-emerald-500 transition-colors">Sistem Pengunci Pintu Otomatis</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 line-clamp-2">Proyek kolaborasi untuk membuat pengunci pintu otomatis menggunakan sensor RFID dan modul Arduino Uno.</p>
+                        <button onclick="openModal('smart-door')" class="w-full text-center py-2 bg-slate-100 dark:bg-slate-700 hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white rounded-xl text-sm font-semibold transition-colors flex items-center justify-center gap-1">
+                            Detail Selengkapnya
+                            <i data-lucide="eye" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman & Edukasi Timeline -->
+    <section id="pengalaman" class="py-20 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight">Perjalanan & Pengalaman</h2>
+                <p class="text-slate-500 dark:text-slate-400">Bagaimana saya belajar, berkembang, dan menerapkan ilmu di dunia kerja sesungguhnya.</p>
+                <div class="w-16 h-1 bg-primary-500 rounded mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Pendidikan -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <span class="p-2 bg-indigo-500/10 text-indigo-500 rounded-xl">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </span>
+                        Riwayat Pendidikan
+                    </h3>
+                    <div class="relative border-l-2 border-indigo-200 dark:border-slate-700 pl-6 space-y-8">
+                        <!-- SMK -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white dark:border-slate-900"></span>
+                            <span class="text-xs font-bold text-indigo-500 bg-indigo-50 dark:bg-indigo-900/30 px-2 py-1 rounded">2023 - Sekarang</span>
+                            <h4 class="text-lg font-bold mt-2">SMK Negeri 4 Bandar Lampung</h4>
+                            <p class="text-sm font-medium text-slate-500 dark:text-slate-400">Kompetensi Keahlian Rekayasa Perangkat Lunak</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Mempelajari Pemrograman Web, Pemrograman Berorientasi Objek, Pemodelan Perangkat Lunak, dan Basis Data.</p>
+                        </div>
+                        <!-- SMP -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-white dark:border-slate-900"></span>
+                            <span class="text-xs font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">2020 - 2023</span>
+                            <h4 class="text-lg font-bold mt-2">SMP Negeri 2 Bandar Lampung</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Aktif di ekstrakurikuler Teknologi Informasi dan Robotika Dasar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pengalaman PKL / Prakerin -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                        <span class="p-2 bg-emerald-500/10 text-emerald-500 rounded-xl">
+                            <i data-lucide="briefcase" class="w-6 h-6"></i>
+                        </span>
+                        Pengalaman Magang / PKL
+                    </h3>
+                    <div class="relative border-l-2 border-emerald-200 dark:border-slate-700 pl-6 space-y-8">
+                        <!-- PKL PT Tech -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white dark:border-slate-900"></span>
+                            <span class="text-xs font-bold text-emerald-500 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded">3 Bulan (2025)</span>
+                            <h4 class="text-lg font-bold mt-2">Software Engineer Intern</h4>
+                            <p class="text-sm font-medium text-slate-500 dark:text-slate-400">PT. Solusi Digital Mandiri</p>
+                            <ul class="text-sm text-slate-500 dark:text-slate-400 mt-2 list-disc list-inside space-y-1">
+                                <li>Membantu debugging modul frontend aplikasi internal.</li>
+                                <li>Memperbarui desain UI sesuai wireframe yang ditentukan desainer.</li>
+                                <li>Menyusun dokumentasi teknis sistem dan tata cara penggunaan aplikasi.</li>
+                            </ul>
+                        </div>
+                        <!-- Freelance -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-white dark:border-slate-900"></span>
+                            <span class="text-xs font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded">Sekarang</span>
+                            <h4 class="text-lg font-bold mt-2">Freelance Web Designer</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">Menyediakan jasa pembuatan desain mockup website dan landing page sederhana untuk UMKM sekitar lingkungan tempat tinggal.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-20 bg-white dark:bg-slate-800/20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight">Koneksi & Hubungi Saya</h2>
+                <p class="text-slate-500 dark:text-slate-400">Jika Anda mencari siswa magang berdedikasi atau ingin berkolaborasi, silakan hubungi saya!</p>
+                <div class="w-16 h-1 bg-primary-500 rounded mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Kontak Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-xl font-bold mb-4">Informasi Kontak</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Saya biasanya membalas pesan dalam waktu kurang dari 24 jam. Mari kita bangun komunikasi yang luar biasa.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-xl">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Email Utama</p>
+                                <a href="mailto:tegarhardinatha@email.com" class="font-semibold hovtegarhardinathaer:text-primary-500 transition-colors">tegarhardinatha@email.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-xl">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Nomor Telepon / WhatsApp</p>
+                                <a href="https://wa.me/628123456789" class="font-semibold hover:text-primary-500 transition-colors">+62 838-4386-8032</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-primary-50 dark:bg-primary-900/20 text-primary-500 rounded-xl">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Alamat Rumah</p>
+                                <p class="font-semibold text-slate-700 dark:text-slate-200">Kec. Sukarame, Bandar Lampung, Lampung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Kontak -->
+                <div class="lg:col-span-7 bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border border-slate-100 dark:border-slate-700/50">
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="senderName" class="block text-sm font-semibold mb-2">Nama Lengkap</label>
+                                <input type="text" id="senderName" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all text-sm" placeholder="Contoh: Budi Santoso">
+                            </div>
+                            <div>
+                                <label for="senderEmail" class="block text-sm font-semibold mb-2">Alamat Email</label>
+                                <input type="email" id="senderEmail" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all text-sm" placeholder="nama@perusahaan.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="messageSubject" class="block text-sm font-semibold mb-2">Subjek Pesan</label>
+                            <input type="text" id="messageSubject" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all text-sm" placeholder="Contoh: Lowongan Magang / Penawaran Kerjasama">
+                        </div>
+                        <div>
+                            <label for="messageBody" class="block text-sm font-semibold mb-2">Isi Pesan Anda</label>
+                            <textarea id="messageBody" rows="5" required class="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all text-sm" placeholder="Tuliskan pesan lengkap Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-primary-500 hover:bg-primary-600 text-white font-semibold rounded-xl shadow-lg shadow-primary-500/30 transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            <span>Kirim Pesan Sekarang</span>
+                        </button>
+                    </form>
+
+                    <!-- Notifikasi Pesan Sukses -->
+                    <div id="successNotification" class="hidden mt-4 p-4 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center gap-3">
+                        <i data-lucide="check-circle" class="w-6 h-6 flex-shrink-0"></i>
+                        <div>
+                            <p class="font-bold">Pesan Terkirim!</p>
+                            <p class="text-xs">Terima kasih telah menghubungi saya. Saya akan segera membalasnya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex justify-center items-center gap-2 text-white">
+                <span class="p-1.5 bg-primary-500 rounded-lg"><i data-lucide="graduation-cap" class="w-5 h-5"></i></span>
+                <span class="font-bold tracking-tight">Tegar Hardinatha</span>
+            </div>
+            <p class="text-sm max-w-md mx-auto">Website ini dibangun sebagai portofolio kelulusan SMK dan kesiapan kerja di masa depan digital.</p>
+            <div class="flex justify-center gap-6">
+                <a href="#beranda" class="hover:text-white transition-colors text-sm">Kembali Ke Atas</a>
+                <span>&bull;</span>
+                <p class="text-sm">&copy; 2026 Tegar Hardinatha. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP DETAIL PROYEK -->
+    <div id="projectModal" class="hidden fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+
+        <!-- Konten Modal -->
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative z-10 border border-slate-100 dark:border-slate-700/80 my-8">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors text-slate-500 dark:text-slate-300">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Dinamis Detail Modals -->
+            <div id="modalContent">
+                <!-- Data akan dimasukkan lewat Javascript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Fungsionalitas -->
+    <script>
+        // Inisialisasi Ikon Lucide
+        lucide.createIcons();
+
+        // 1. Logika Dark/Light Mode
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        // Cek preferensi user sebelumnya
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.setAttribute('data-lucide', 'sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.setAttribute('data-lucide', 'moon');
+        }
+        lucide.createIcons();
+
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.setAttribute('data-lucide', 'moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.setAttribute('data-lucide', 'sun');
+            }
+            lucide.createIcons();
+        });
+
+        // 2. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu mobile ketika link diklik
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 3. Proyek Filter Logic
+        function filterProjects(category) {
+            const projects = document.querySelectorAll('.project-card-el');
+            const filterBtns = document.querySelectorAll('.project-filter-btn');
+
+            // Perbarui warna tombol filter yang aktif
+            filterBtns.forEach(btn => {
+                const btnText = btn.textContent.trim().toLowerCase();
+                const categoryMapping = {
+                    'semua': 'all',
+                    'web app': 'web',
+                    'ui/ux design': 'design',
+                    'lainnya': 'others'
+                };
+                
+                if (categoryMapping[btnText] === category) {
+                    btn.className = "project-filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-primary-500 text-white shadow-md transition-all";
+                } else {
+                    btn.className = "project-filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all";
+                }
+            });
+
+            // Tampilkan/sembunyikan item kartu proyek
+            projects.forEach(project => {
+                const projectCategory = project.getAttribute('data-category');
+                if (category === 'all' || projectCategory === category) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        }
+
+        // 4. Modal Detail Proyek
+        const dataProyek = {
+            'kasir': {
+                title: 'Aplikasi Kasir Sekolah',
+                category: 'Web App & Sistem Database',
+                techStack: ['PHP Native', 'MySQL', 'Bootstrap 5', 'ChartJS'],
+                description: 'Aplikasi kasir ini dikembangkan untuk mencatat transaksi keuangan di Kantin Sehat Sekolah. Memiliki fitur pelaporan penjualan harian dan bulanan yang divisualisasikan dalam bentuk grafik yang rapi.',
+                contribution: 'Sebagai Fullstack Developer utama, mengurus seluruh pembuatan relasi database, logika CRUD backend, dan pembuatan rekapitulasi data.',
+                features: ['Manajemen Stok Barang', 'Kasir dengan Scanner Sederhana', 'Grafik Penjualan Bulanan', 'Laporan Berkas PDF']
+            },
+            'web-sekolah': {
+                title: 'Redesign Website Sekolah',
+                category: 'UI/UX Design Mockup',
+                techStack: ['Figma', 'Adobe Illustrator', 'Contrast Checker'],
+                description: 'Proyek desain ulang antarmuka website utama SMK Negeri 4 Bandar Lampung. Fokus utama dari perancangan ulang ini adalah kemudahan navigasi bagi calon siswa baru (PPDB) serta optimalisasi akses pada versi seluler.',
+                contribution: 'Melakukan riset pengalaman pengguna (User Experience), merancang alur halaman (User Flow), wireframing, dan membuat prototipe interaktif resolusi tinggi.',
+                features: ['Aksesibilitas Tinggi (Sesuai WCAG)', 'Dark & Light Mode Mockups', 'Prototipe Interaktif Siap Uji Pengguna']
+            },
+            'smart-door': {
+                title: 'Sistem Pengunci Pintu Otomatis',
+                category: 'IoT & Hardware Automation',
+                techStack: ['Arduino IDE', 'C++', 'RFID RC522 Sensor', 'Solenoid Door Lock'],
+                description: 'Mengembangkan sistem keamanan pintu laboratorium menggunakan kartu RFID ID siswa. Jika kartu terdaftar, pintu terbuka otomatis. Jika tidak terdaftar, alarm buzzer akan langsung berbunyi.',
+                contribution: 'Menyusun rangkaian kelistrikan di papan roti (breadboard), menulis firmware pengendali sensor, serta berkolaborasi merakit wadah luar menggunakan 3D printer.',
+                features: ['Keamanan Berbasis Kartu RFID', 'Solenoid Otomatis bertenaga 12V', 'Peringatan Alarm Buzzer']
+            }
+        };
+
+        const projectModal = document.getElementById('projectModal');
+        const modalContent = document.getElementById('modalContent');
+
+        function openModal(projectKey) {
+            const data = dataProyek[projectKey];
+            if (!data) return;
+
+            let techBadgeHTML = '';
+            data.techStack.forEach(tech => {
+                techBadgeHTML += `<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold rounded-lg">${tech}</span>`;
+            });
+
+            let featuresListHTML = '';
+            data.features.forEach(feat => {
+                featuresListHTML += `<li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+                    <i data-lucide="check" class="w-4 h-4 text-emerald-500"></i>
+                    <span>${feat}</span>
+                </li>`;
+            });
+
+            modalContent.innerHTML = `
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs font-bold text-primary-500 uppercase tracking-wider">${data.category}</span>
+                        <h3 class="text-2xl font-extrabold mt-1 text-slate-800 dark:text-slate-100">${data.title}</h3>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm text-slate-400 uppercase tracking-wider">Teknologi & Alat</h4>
+                        <div class="flex flex-wrap gap-2">${techBadgeHTML}</div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm text-slate-400 uppercase tracking-wider">Deskripsi Proyek</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">${data.description}</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm text-slate-400 uppercase tracking-wider">Kontribusi Saya</h4>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">${data.contribution}</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h4 class="font-bold text-sm text-slate-400 uppercase tracking-wider">Fitur Utama</h4>
+                        <ul class="space-y-2">${featuresListHTML}</ul>
+                    </div>
+                </div>
+            `;
+
+            projectModal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+            lucide.createIcons(); // Instansiasi ikon baru di dalam modal
+        }
+
+        function closeModal() {
+            projectModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // 5. Submit Form Kontak Interaktif
+        const contactForm = document.getElementById('contactForm');
+        const successNotification = document.getElementById('successNotification');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Sembunyikan form secara halus dan tampilkan notifikasi sukses
+            contactForm.classList.add('opacity-50', 'pointer-events-none');
+            successNotification.classList.remove('hidden');
+
+            // Reset input form
+            contactForm.reset();
+
+            // Aktifkan kembali setelah beberapa saat
+            setTimeout(() => {
+                contactForm.classList.remove('opacity-50', 'pointer-events-none');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
